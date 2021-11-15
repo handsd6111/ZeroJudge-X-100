@@ -8,18 +8,22 @@ public class a010 {
         int num = sc.nextInt();
         PrimeFactorization pf = new PrimeFactorization(num);
         List<Integer> result = pf.Execute_And_Get();
-        List<Integer> count = new ArrayList<Integer>();
-        int now = 0;
+        List<String> resultString = new ArrayList<String>();
+        int now = 0, index = -1, count = 0;
         for (int i = 0; i < result.size(); i++) {
             if (result.get(i) != now) {
                 now = result.get(i);
-                count.add(now);
+                resultString.add(now + "");
+                index++;
+                count = 1;
+            } else {
+                resultString.set(index, now + " ^ " + ++count);
             }
         }
 
-        System.out.printf("%d", result.get(0));
-        for (int i = 1; i < result.size(); i++) {
-            System.out.printf("*" + result.get(i));
+        System.out.printf("%s", resultString.get(0));
+        for (int i = 1; i < resultString.size(); i++) {
+            System.out.printf(" * " + resultString.get(i));
         }
         sc.close();
     }
