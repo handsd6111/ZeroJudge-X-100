@@ -6,10 +6,9 @@ public class PrimeNumberManagment {
 
     public PrimeNumberManagment() {
         primeNumberList = new ArrayList<Integer>();
-        Find_All_Prime_Nunber(2);
     }
 
-    public List<Integer> Find_All_Prime_Nunber(int end) {
+    public List<Integer> Find_All_Prime_Number(int end) {
         if (end < Get_Now_Prime_Number()) {
             List<Integer> tmpList = new ArrayList<>();
             for (int i = 0; i < primeNumberList.size(); i++) {
@@ -39,8 +38,8 @@ public class PrimeNumberManagment {
     }
 
     public int Find_Next_Prime_Number(int now, int end) {
-        boolean isNext = true;
-        for (int i = now + 1; i < end; i++) {
+        for (int i = now + 1; i <= end; i++) {
+            boolean isNext = true;
             for (int j = 2; j < i - 1; j++) {
                 if (i % j == 0) {
                     isNext = false;
