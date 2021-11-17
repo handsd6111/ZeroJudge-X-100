@@ -14,5 +14,6 @@ public class a040 {
                 System.out.printf("%d ", i);
             }
         }
+        sc.close();
     }
 }
